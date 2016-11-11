@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Abel';
+    src: local('Abel'), local('Abel-Regular'), url('../fonts/Abel/Abel-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/abel/Abel-Regular.woff') format('woff'), url('../fonts/abel/Abel-Regular.ttf') format('truetype'), url('../fonts/abel/Abel-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AgencyFB';
+    src: local('AgencyFB'), local('AgencyFB-Reg'), url('../fonts/agency-fb/AgencyFB-Reg.eot?#iefix') format('embedded-opentype'), url('../fonts/agency-fb/AgencyFB-Reg.woff') format('woff'), url('../fonts/agency-fb/AgencyFB-Reg.ttf') format('truetype'),  url('../fonts/agency-fb/AgencyFB-Reg.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
