@@ -1,0 +1,493 @@
+/*
+*BOOTSTRAP
+*/
+
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+@import '../../node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
+@import '../vendors/parallax-objects/parallax-objects.css'
+
+@font-face {
+  font-family: 'AgencyFB';
+  src: local('AgencyFB'), local('AgencyFB-Reg'), url('../fonts/agency-fb/AgencyFB-Reg.eot?#iefix') format('embedded-opentype'), url('../fonts/agency-fb/AgencyFB-Reg.woff') format('woff'), url('../fonts/agency-fb/AgencyFB-Reg.ttf') format('truetype'),  url('../fonts/agency-fb/AgencyFB-Reg.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+baseFonts = 'Abel', 'Abel-Regular', 'Helvetica', 'Arial'
+secondFonts = 'AgencyFB', 'AgencyFB-Reg', 'Arial', 'Helvetica'
+baseColor = #F2F2F2
+secondColor = #46474B
+linkColor = #69A0AB
+secondLinkColor = #756CAE
+
+zoom(val)
+  zoom: val;
+  -moz-transform: scale(val);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(val);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(val);
+  -webkit-transform-origin: 0 0;
+  transform: scale(val);
+  transform-origin: 0 0;
+
+border-radius(val)
+  -webkit-border-radius: val;
+  -moz-border-radius: val;
+  border-radius: val;
+
+placeholder(target,value)
+  for prefix, i in '::-webkit-input-placeholder' '::-moz-placeholder' ':-moz-placeholder' ':-ms-input-placeholder'
+    {target}{prefix} {
+      {value}
+    }
+
+center(width)
+  ((width / 2)*-1)
+
+center-content()
+  position absolute
+  top 50%
+  transform translateY(-50%)
+  width 100%
+
+tabletVertical = 768px
+tabletHorizontal = 1024px
+notebook = 1280px
+
+
+
+
+
+/*
+* BODY
+*/
+html,body
+  width 100vw !important
+  overflow-x hidden
+
+
+body
+  font-family baseFonts
+  background-color baseColor
+  color secondColor
+  &.loading
+    overflow hidden
+    height 100vh
+    width 100vw
+  h1,h2
+    font-family secondFonts
+    &h3,h4,h5
+      font-weight bold
+  a
+    color linkColor
+    &:hover,&:active,&:visited
+      color secondLinkColor
+  p
+    font-size 1.2em
+  .logo
+    width 230px
+    height 100px
+    .icon
+      clear left
+      float left
+      width 50px
+    .text
+      float left
+      padding-top 5px
+      padding-left 5px
+    .title
+      padding 0
+      margin-top 0
+      font-size 2em
+      font-family secondFonts
+      text-transform uppercase
+      float left
+      margin-bottom 5px
+    .slogan
+      padding 0
+      margin-top 0
+      font-size 1em
+      font-family baseFonts
+      float left
+      clear left
+
+  .bigflower
+    width 1334px
+    height 1330px
+    max-width: 100%
+    overflow: hidden;
+    &.white
+      background-image url("../img/flower-line-f2f2f2.png")
+      top 0
+    &.black
+      background-image url("../img/flower-line-46474B.png")
+      top -100%
+    &.white,&.black
+      left 10%
+      @media(min-width: tabletVertical)
+        left 50%
+        margin-left (center(1334px) + 200)
+
+  nav.navbar
+    max-width: 100vw
+    overflow: hidden;
+    @media(min-width: tabletHorizontal)
+      display none
+    .logo
+      zoom(70%)
+      margin-top -12px
+      color baseColor
+      .title
+        margin-bottom 0
+      .title,.slogan
+            display none
+    .icon-bar
+      background-color baseColor
+    ul
+      background-color alpha(secondColor,70%)
+      @media(min-width: tabletVertical)
+        background-color transparent
+      a
+        background-color transparent
+        font-size 1.2em
+        &:hover,&:focus
+          text-decoration none;
+          background-color lightness(secondColor,50%);
+    a
+      color baseColor
+
+    @media(min-width: tabletVertical)
+      &.navbar-fixed-top
+        position absolute
+    @media(min-width: tabletVertical)
+      &.fixed
+        position fixed
+      &.show
+        display block
+
+    &.white
+      background-color alpha(baseColor,70%)
+      .icon-bar
+        background-color secondColor
+      ul
+        background-color transparent
+        li
+          @media(min-width: tabletVertical)
+            height 50px
+            box-sizing: border-box;
+            &.active
+              border-bottom solid 2px alpha(secondColor,50%)
+          a
+            color secondColor
+            &:hover,&:focus
+              text-decoration none;
+              background-color alpha(lightness(baseColor,85%),50%);
+
+  header,section
+    min-height 100vh
+    width 100%
+
+  section,footer
+    .row:first-child
+      padding-top 60px
+      @media(min-height: 800px)
+        padding-top 0
+    .row:last-child
+      padding-bottom 60px
+      @media(min-height: 900px)
+        padding-top 0
+  footer
+    width 100%
+
+  @media(min-height: tabletVertical)
+    for obj in sobre portfolios contatos
+      #{obj}
+         position relative
+      #{obj}-content
+         center-content();
+
+  #home
+    background-color secondColor
+    color baseColor
+    .wrap
+      position absolute
+      top 20%
+      width 100%
+      @media(min-width: tabletHorizontal)
+        top 0
+        height 100vh
+    .menu
+      display none
+      font-family secondFonts
+      menuWidth = 250
+      menuHeight = 160
+      width (menuWidth)px
+      height  (menuHeight)px
+      @media(min-width: tabletHorizontal)
+        display block
+        position absolute
+        top 50%
+        left 50%
+        margin-top center(menuHeight)px
+        margin-left ((center(900px)*-1) - menuWidth)
+        @media(min-width: notebook)
+          margin-left ((center(1000px)*-1) - menuWidth)
+      ul
+        padding 0
+        margin 0
+        li
+          list-style none
+          a
+            color baseColor
+            font-size 2em
+    .logo
+      line-height 30px
+      font-size 1.8em
+      text-align center
+      width 100%
+      height 80px
+      float left
+      @media(min-width: tabletHorizontal)
+        width 243px
+        position absolute
+        top 50%
+        margin-top center(80px)
+        left 50%
+        margin-left center(900px)
+        @media(min-width: notebook)
+          margin-left center(1000px)
+      .title,.slogan
+        float none
+        clear none
+      .slogan
+        letter-spacing -0.15px
+    .flower
+      background-image url(../img/flower-mini.png)
+      background-repeat no-repeat
+      width 252px
+      height 252px
+      margin 0 auto
+      margin-top 100px
+      @media(min-width: tabletHorizontal)
+        position absolute
+        top 50%
+        margin-top center(251px)
+        left 50%
+        margin-left center(252px)
+
+
+  //Sobre Wrap
+  .wrap-sobre
+    width 100%
+    min-height 100%
+    .parallaxObjects-WrapAbsolute:first-child
+      overflow visible
+      z-index -2
+
+
+  #sobre
+    .logo
+      width 200px
+      height 60px
+      position relative
+      left 50%
+      margin-left center(200px)
+      .text
+        padding 0
+        margin-left 5px
+      .title
+        margin-bottom 0
+      .slogan
+        margin-top -8px
+      .icon
+        padding-top 5px
+    .row
+      margin-top 20px
+      margin-bottom 20px
+    .photo
+      text-align center
+      margin-top 20px
+      margin-bottom 20px
+      @media(min-width: tabletVertical)
+        margin-top -87px
+        margin-bottom 0px
+        text-align right
+
+      img
+        width 80%
+        max-width 287px
+        min-width 60px
+    h3
+      font-style italic
+      font-weight bold
+      color lightness(secondColor,70%)
+      font-size 1.1em
+      border-bottom solid 1.5px lightness(secondColor,70%)
+      float left
+      padding-left 0px
+      padding-right 100px
+    ul
+      float left
+      clear left
+      padding 0
+      li
+        list-style none
+        list-style-position outside
+        a
+          color secondColor
+          font-family secondFonts
+          font-size 1.5em
+
+  #portfolios
+    .margin-bottom-20
+      margin-bottom 20px
+      @media(min-width tabletHorizontal)
+        margin-bottom 40px
+    a
+      color secondColor
+    .bigflower-color
+      background-image url("../img/flower-full-stack.png")
+      width 720px
+      height 719px
+      top 0
+      left 20%
+      max-width: 100%
+      overflow: hidden;
+      @media(min-width: tabletHorizontal)
+        left 50%
+      @media(min-width: notebook)
+        left 75%
+    .parallaxObjects-WrapAbsolute
+      overflow visible
+
+  #contatos
+    overflow hidden
+    .btn
+      width 100%
+    $placeholder =
+      color baseColor
+    placeholder(input,$placeholder)
+    placeholder(textarea,$placeholder)
+    input,textarea
+      background-color alpha(secondColor,50%)
+      color baseColor
+      border-radius(0)
+    button
+      background-color secondColor
+      color baseColor
+      border-radius(0)
+    .captcha
+      background-color secondColor
+      height 46px
+    input[name=captcha]
+      text-align center
+  footer
+    background-color secondColor
+    background-image url(../img/flower-line-f2f2f2.png)
+    background-position ((1334px * 0.1) / 2) 0
+    background-size 30%
+    color baseColor
+    padding-top 5%
+    .logo
+      position relative
+      width 160px
+      left 50%
+      margin-left center(160px)
+      text-align center
+      .icon
+        width: 100%;
+      .text
+        width 160px
+        text-align center
+        .title
+          margin 0
+          float none
+        .slogan
+          margin-top -5px
+          float none
+
+body.loading
+      overflow hidden
+      
+#intro
+  position fixed
+  width 100%
+  height 100%
+  z-index 10000000
+  background-color #FFFFFF
+
+#intro .wrap
+  position absolute
+  left 50%
+  top 50%
+  width 57px
+  height 55px
+  margin-left -28.5px
+  margin-top -27.5px
+
+#intro .loader
+  animation introLoader linear 3s
+  animation-iteration-count infinite
+  transform-origin 50% 50%
+  -webkit-animation introLoader linear 3s
+  -webkit-animation-iteration-count infinite
+  -webkit-transform-origin 50% 50%
+  -moz-animation introLoader linear 3s
+  -moz-animation-iteration-count infinite
+  -moz-transform-origin 50% 50%
+  -o-animation introLoader linear 3s
+  -o-animation-iteration-count infinite
+  -o-transform-origin 50% 50%
+  -ms-animation introLoader linear 3s
+  -ms-animation-iteration-count infinite
+  -ms-transform-origin 50% 50%
+
+
+@keyframes introLoader{
+  0% {
+    transform:  rotate(0deg) ;
+  }
+  100% {
+  transform:  rotate(359deg) ;
+  }
+}
+@-moz-keyframes introLoader{
+  0% {
+  -moz-transform:  rotate(0deg) ;
+  }
+  100% {
+  -moz-transform:  rotate(359deg) ;
+  }
+}
+@-webkit-keyframes introLoader {
+  0% {
+  -webkit-transform:  rotate(0deg) ;
+  }
+  100% {
+  -webkit-transform:  rotate(359deg) ;
+  }
+}
+@-o-keyframes introLoader {
+  0% {
+  -o-transform:  rotate(0deg) ;
+  }
+  100% {
+  -o-transform:  rotate(359deg) ;
+  }
+}
+@-ms-keyframes introLoader {
+  0% {
+  -ms-transform:  rotate(0deg) ;
+  }
+  100% {
+  -ms-transform:  rotate(359deg) ;
+  }
+}
+
+.user-card 
+  .header
+    background: secondColor !important
+    background-image: none !important
+    background-color secondColor !important

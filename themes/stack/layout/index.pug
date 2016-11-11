@@ -1,0 +1,152 @@
+doctype html
+html.no-js(lang='pt-BR', xmlns:fb='http://ogp.me/ns/fb#')
+  head(lang='pt-br')
+    meta(charset='utf-8')
+    link(rel='profile', href='http://gmpg.org/xfn/11')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='description', content='Desenvolvedor Full Stack, especialista em softwares para internet, websites, aplicativos mobiles.')
+    title Philippe Assis | Full Stack Web Developer
+    link(rel='shortcut icon', href='img/favicon.ico')
+    link(rel='apple-touch-icon', href='img/icon-loader.png')
+    
+    //if lt IE 9
+      script(src='/js/html5.js')
+    
+    link(rel='alternate', type='application/rss+xml', title='Feed de Philippe Assis »', href='http://www.philippeassis.com/feed/')
+    link(rel='alternate', type='application/rss+xml', title='Philippe Assis »  Feed de comentários', href='http://www.philippeassis.com/comments/feed/')
+    link(rel='alternate', type='application/rss+xml', title='Philippe Assis » Home  Feed de comentários', href='http://www.philippeassis.com/home/feed/')
+    link(rel='EditURI', type='application/rsd+xml', title='RSD', href='http://www.philippeassis.com/wordpress/xmlrpc.php?rsd')
+    link(rel='wlwmanifest', type='application/wlwmanifest+xml', href='http://www.philippeassis.com/wordpress/wp-includes/wlwmanifest.xml')
+    link(rel='canonical', href='http://www.philippeassis.com/')
+    link(rel='shortlink', href='http://www.philippeassis.com/')
+    
+    link(href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet")
+    link(href='css/style.css', rel='stylesheet', type='text/css')
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-61558129-1', 'auto');
+      ga('send', 'pageview');
+  body.loading
+    #intro
+      .wrap
+        .loader
+          img(src='img/icon-loader.png', alt='Philippe Assis | Full Stack Web Developer', title='Philippe Assis | Full Stack Web Developer')
+    nav#menu.navbar.navbar-fixed-top
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+            span.sr-only
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand.scrollto(href='#home')
+            .logo
+              img.icon(src='img/icon-loader.png')
+              span.text
+                h1.title Philippe Assis
+                h3.slogan Full Stack Web Developer
+        #navbar.collapse.navbar-collapse.navbar-right
+          ul.nav.navbar-nav
+            li.hide
+              a.scrollto(href='#home', title='Home') In&iacute;cio
+            li
+              a.scrollto(href='#sobre', title='Quem sou, minhas faculdades e metodologias') Sobre
+            li
+              a.scrollto(href='#portfolios', title='Resumos dos trabalhos e projetos') Portfolios
+            li
+              a.scrollto(href='#contatos', title='Telefone, email e formulário de contato') Contatos
+    header#home
+      .conteiner
+        .wrap
+          .logo
+            h1.title Philippe Assis
+            h2.slogan Full Stack Web Developer
+          .flower
+          .menu
+            ul
+              li
+                a.scrollto(href='#sobre', title='Sobre Philippe Assis') Sobre
+              li
+                a.scrollto(href='#portfolios', title='Resumos dos trabalhos e projetos') Portfolios
+              li
+                a.scrollto(href='#contatos', title='Telefone, email e formulário de contato') Contatos
+    #wrap-sobre.wrap-sobre
+      section#sobre
+        #sobre-content
+          .container
+            .row
+              div
+                .logo
+                  img.icon(src='img/icon-loader.png')
+                  |  
+                  span.text
+                    span.title Philippe Assis
+                    |  
+                    span.slogan Full Stack Web Developer
+            .row
+              .photo.col-sm-4.col-md-3.col-md-offset-1
+                img(src='img/philippe-assis.png')
+              .col-sm-7.col-md-6
+                p
+                  | Profissional desde 2009, cursou Comunica&ccedil;&atilde;o social - Publicidade e Sistemas de informa&ccedil;&atilde;o. Dedicado aos estudos da Teologia, Ciencias sociais, Computa&ccedil;&atilde;o, Rob&oacute;tica e Empreendedorismo. Sempre procurando entender os sistemas e suas l&oacute;gicas, e a melhor maneira de aperfei&ccedil;oa-las e comunica-las.
+      section#portfolios
+        #portfolios-content.container
+          .margin-bottom-20.row
+            .col-md-12.text-center
+              h1 Portfolios
+              p Voc&ecirc; pode ver e acompanhar meus trabalhos nas redes sociais
+          .row
+            .margin-bottom-20.col-sm-offset-4.col-sm-4.text-center
+              div(class="github-card" data-github="philippeassis" data-width="400" data-height="150" data-theme="default")
+              
+
+      section#contatos
+        #contatos-content.container
+          .row
+            .col-md-12.text-center
+              h1 Contatos
+          .row
+            .col-xs-12.col-sm-offset-3.col-sm-6
+              br
+              p
+                | Philippe Assis
+                br
+                |  Santa Catarina - Brasil
+                br
+                |  47 96450005
+                br
+                |  assis@philippeassis.com
+              br
+    footer#footer
+      .row
+        .logo
+          img.icon(src='img/icon.png', alt='Full Stack')
+          |  
+          span.text
+            span.title Philippe Assis
+            |  
+            span.slogan Full Stack Web Developer
+      .row
+        .col-xs-12.text-center
+          br
+          br
+          |  Desenvolvedor Full Stack, especialista em softwares para internet, websites, aplicativos mobiles.
+          br
+          br
+          br
+          br
+          |  2016 - Todos os direitos reservados
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+    script(src="//cdn.jsdelivr.net/github-cards/latest/widget.js")
+    script(src='js/main.min.js')
+    
+    script.
+      $( window ).load(function() {
+      $('#intro').fadeOut(1500,function(){
+      $('body').removeClass('loading')
+      });
+      });

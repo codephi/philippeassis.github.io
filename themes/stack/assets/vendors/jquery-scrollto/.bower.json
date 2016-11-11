@@ -1,0 +1,14 @@
+{
+  "name": "jquery-scrollto",
+  "homepage": "https://github.com/PhilippeAssis/jquery-scrollto",
+  "_release": "074a845928",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "074a845928992fb735024f1ead5e396611b00f9b"
+  },
+  "_source": "git://github.com/PhilippeAssis/jquery-scrollto.git",
+  "_target": "*",
+  "_originalSource": "PhilippeAssis/jquery-scrollto",
+  "_direct": true
+}

@@ -1,0 +1,13 @@
+{
+  "name": "parallax-objects",
+  "_release": "a0fe4989e3",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a0fe4989e3514dfc59dd757aa427cfc5e0259801"
+  },
+  "_source": "/var/www/gits/parallax-objects",
+  "_target": "*",
+  "_originalSource": "/var/www/gits/parallax-objects",
+  "_direct": true
+}

@@ -1,0 +1,26 @@
+.parallaxObjects{
+    background-repeat: no-repeat;
+    position: absolute;
+    opacity: 1;
+}
+.parallaxObjects-WrapAbsolute{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+.parallaxObjects-WrapRelative{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.parallaxObjects-WrapContent {
+    /*z-index: 10;*/
+    /*position: relative;*/
+}
+
+.parallaxObjects-StageParallax {
+    /*position: relative;*/
+}
