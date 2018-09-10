@@ -30,12 +30,24 @@ function getFeeds(url, origin) {
 
 async function mainFeeds() {
   let result = [];
-  const mediumFeeds = await getFeeds('https://medium.com/feed/@philippeassis', 'medium')
+  // const mediumFeeds = await getFeeds('https://medium.com/feed/@philippeassis', 'medium')
+  const {data: {items}} = await axios.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40philippeassis')
 
-  mediumFeeds.map(({origin, title, content, link}) => {
-    const domItem = `<div class="social-item col-md-4">
+  for (let i = 0; i < items.length; i++) {
+    const {origin, title, content, link} = items[i]
+    let addClass = ''
+
+    if (i == 0) {
+      if (items.length == 1) {
+        addClass = 'col-md-offset-4'
+      } else if (items.length == 2) {
+        addClass = 'col-md-offset-2'
+      }
+    }
+
+    const domItem = `<div class="social-item col-md-4 ${addClass}">
                             <div class="social-item-wrapper">
-                                <img class="social-icon" src="/img/icons/${origin}.png"/>
+                                <img class="social-icon" src="/img/icons/medium.png"/>
                                 <h3 class="social-item-title">${title}</h3>
                                 <div class="social-item-content">${content}</div>
                                 <div class="social-item-border">
@@ -45,7 +57,7 @@ async function mainFeeds() {
                         </div>`
 
     result.push(domItem)
-  })
+  }
 
 
   $('#social-feeds').html(result.join('\n'))
