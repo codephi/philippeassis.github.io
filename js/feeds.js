@@ -48,7 +48,7 @@ async function mainFeeds() {
     const domItem = `<div class="social-item col-md-4 ${addClass}">
                             <div class="social-item-wrapper">
                                 <img class="social-icon" src="/img/icons/medium.png"/>
-                                <h3 class="social-item-title">${title}</h3>
+                                <h3 class="social-item-title"><a href="${link}" title="${title}">${title}</a></h3>
                                 <div class="social-item-content">${content}</div>
                                 <div class="social-item-border">
                                     <a class="social-item-readmore" href="${link}" title="${title}">Ler mais</a>
